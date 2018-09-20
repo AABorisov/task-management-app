@@ -1,0 +1,24 @@
+.task-item {
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+            "task-title task-button"
+            "task-input task-button"
+            "task-info task-button";
+    height: 50px;
+}
+
+.task-button {
+    grid-area: task-button;
+}
+.task-title {
+    grid-area: task-title;
+}
+.task-input {
+    grid-area: task-input;
+    height: 100%;
+}
+.task-info {
+    grid-area: task-info;
+}

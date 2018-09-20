@@ -1,0 +1,11 @@
+.page-container {
+    width: 80%;
+    margin: 10px auto;
+    padding: 32px;
+    background-color: white;
+    border-radius: 25px;
+
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-row-gap: 10px;
+}
