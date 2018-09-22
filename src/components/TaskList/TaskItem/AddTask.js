@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addTask } from "../../../actions";
 
 class AddTask extends Component {
     constructor(props) {
@@ -18,7 +20,13 @@ class AddTask extends Component {
     }
 
     handleSubmit(event) {
-        console.log("addTask", this.state.value);
+        this.props.addTask({
+            title: this.state.value,
+            timeCreated: new Date()
+        });
+        this.setState({
+            value : ''
+        });
         event.preventDefault();
     }
 
@@ -32,7 +40,7 @@ class AddTask extends Component {
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
-                    placeholder= "Type New Task Title"
+                    placeholder= "Type new task title..."
                 />
                 <input
                     className = "task-button"
@@ -44,4 +52,12 @@ class AddTask extends Component {
     }
 }
 
-export default AddTask;
+function mapDispatchToProps(dispatch) {
+    return {
+        addTask: (task) => {
+            dispatch(addTask(task));
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AddTask);

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { addNote } from '../../actions';
 
 class AddNote extends Component {
     constructor(props) {
@@ -18,25 +20,34 @@ class AddNote extends Component {
     }
 
     handleSubmit(event) {
-        console.log("AddNote", this.state.value);
+        this.props.addNote(this.state.value);
+        this.setState({
+            value : ''
+        });
         event.preventDefault();
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    New Task:
-                    <textarea
-                        type="text"
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                    />
-                </label>
+                <textarea
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    placeholder= "Type new note..."
+                />
                 <input type="submit" value="Add note" />
             </form>
         );
     }
 }
 
-export default AddNote;
+
+function mapDispatchToProps(dispatch) {
+    return {
+        addNote: (task) => {
+            dispatch(addNote(task));
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(AddNote);

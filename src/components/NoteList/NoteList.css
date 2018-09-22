@@ -1,0 +1,16 @@
+.note-list {
+    display: grid;
+    grid-row-gap: 10px;
+    overflow-y: scroll;
+}
+
+.note-list form {
+    display: grid;
+    grid-template-columns: auto 100px;
+    grid-template-rows: 1fr;
+    min-height: 50px;
+}
+
+.note-item {
+    min-height: 50px;
+}

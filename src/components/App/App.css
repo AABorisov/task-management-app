@@ -7,5 +7,21 @@
 
     display: grid;
     grid-template-rows: 100px auto;
-    grid-row-gap: 10px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+            "header header"
+            "task-list note-list";
+    grid-gap: 10px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.task-list {
+    grid-area: task-list
+}
+
+.note-list {
+    grid-area: note-list;
 }

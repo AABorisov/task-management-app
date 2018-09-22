@@ -1,24 +1,32 @@
 .task-item {
     display: grid;
     grid-template-columns: auto 100px;
-    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-            "task-title task-button"
-            "task-input task-button"
-            "task-info task-button";
+            "task-content task-button";
     height: 50px;
 }
 
-.task-button {
-    grid-area: task-button;
+.task-input {
+    grid-area: task-content;
 }
+
+.task-content {
+    grid-area: task-content;
+    display: grid;
+    grid-template-areas:
+    "task-title task-title task-title task-title";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
 .task-title {
     grid-area: task-title;
-}
-.task-input {
-    grid-area: task-input;
-    height: 100%;
+    font-size: 1em;
+    font-weight: bold;
 }
 .task-info {
     grid-area: task-info;
+}
+.task-button {
+    grid-area: task-button;
 }

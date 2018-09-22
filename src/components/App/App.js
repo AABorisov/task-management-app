@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
 import Header from '../Header/Header';
@@ -12,11 +13,17 @@ class App extends Component {
                 <Header />
                 <TaskList />
                 {
-                    false ? <NoteList /> : null
+                    this.props.selectTask !== null ? <NoteList /> : null
                 }
             </div>
         );
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        selectTask: state.tasks.selectedTask
+    }
+}
+
+export default connect(mapStateToProps)(App);
