@@ -9,16 +9,18 @@ const NoteList = (props) => {
     const selectedTask = props.selectedTask;
     const notes = props.tasks.find(task => task.id === selectedTask).notes;
     return (
-        <div className = 'note-list'>
+        <div className = 'notes'>
             <AddNote />
-            {
-                notes.map(note => (
-                    <NoteItem
-                        note = {note}
-                        key = {note}
-                    />
-                )).reverse()
-            }
+            <div className = 'note-list'>
+                {
+                    notes.map((note, index) => (
+                        <NoteItem
+                            note = {note}
+                            key = {index}
+                        />
+                    )).reverse()
+                }
+            </div>
         </div>
     );
 };

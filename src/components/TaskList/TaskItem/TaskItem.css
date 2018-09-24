@@ -1,6 +1,7 @@
 .task-item {
     display: grid;
     grid-template-columns: auto 100px;
+    grid-column-gap: 10px;
     grid-template-areas:
             "task-content task-button";
     height: 50px;

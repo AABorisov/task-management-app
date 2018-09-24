@@ -1,14 +1,24 @@
+.notes {
+    display: grid;
+    grid-row-gap: 10px;
+    align-content: start;
+}
+
 .note-list {
     display: grid;
     grid-row-gap: 10px;
-    overflow-y: scroll;
+    align-content: start;
 }
 
-.note-list form {
+.add-note {
     display: grid;
     grid-template-columns: auto 100px;
-    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
     min-height: 50px;
+}
+
+.add-note textarea {
+    resize: none;
 }
 
 .note-item {

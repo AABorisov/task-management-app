@@ -8,16 +8,18 @@ import AddTask from "./TaskItem/AddTask";
 const TaskList = props => {
     const {tasks} = props;
     return (
-        <div className = 'task-list'>
+        <div className = 'tasks'>
             <AddTask />
-            {
-                tasks.map(task =>
-                    <TaskItem
-                        task = {task}
-                        key = {task.id}
-                    />
-                ).reverse()
-            }
+            <div className = 'task-list'>
+                {
+                    tasks.map(task =>
+                        <TaskItem
+                            task = {task}
+                            key = {task.id}
+                        />
+                    ).reverse()
+                }
+            </div>
         </div>
     );
 };

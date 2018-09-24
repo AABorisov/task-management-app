@@ -10,7 +10,7 @@
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
             "header header"
-            "task-list note-list";
+            "tasks notes";
     grid-gap: 10px;
 }
 
@@ -18,10 +18,10 @@
     grid-area: header;
 }
 
-.task-list {
-    grid-area: task-list
+.tasks {
+    grid-area: tasks
 }
 
-.note-list {
-    grid-area: note-list;
+.notes {
+    grid-area: notes;
 }

@@ -29,7 +29,10 @@ class AddNote extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form
+                className='add-note'
+                onSubmit={this.handleSubmit}
+            >
                 <textarea
                     value={this.state.value}
                     onChange={this.handleChange}
